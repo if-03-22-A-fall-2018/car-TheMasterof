@@ -12,5 +12,13 @@
 */
 #ifndef ___CAR_H
 #define ___CAR_H
+enum CarType{AIXAM, FIAT_MULTIPLA, JEEP};
+enum Color{RED, GREEN, BLUE, ORANGE, SILVER, BLACK};
+
+struct Car{
+
+};
+
+
 
 #endif
