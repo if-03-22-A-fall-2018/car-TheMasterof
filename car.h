@@ -13,24 +13,27 @@
 #ifndef ___CAR_H
 #define ___CAR_H
 
-enum car_type{AIXAM, FIAT_MULTIPLA, JEEP };
-enum car_color{RED, GREEN, SILVER, };
+enum CarType { JEEP, AIXAM, FIAT_MULTIPLA };
+enum Color { RED, GREEN, BLUE, ORANGE, SILVER, BLACK };
 
-struct Carimplementation{
-  enum car_type type;
-  enum car_color color;
-  double fill_level;
+typedef struct CarImplementation* Car;
+
+struct CarImplementation {
+  enum CarType type;
+  enum Color color;
+  double speed;
   double acceleration_rate;
-  int speed;
+  double fill_level;
+  bool rented;
 };
 
-typedef struct Carimplementation* Car;
-
-enum  get_car(car_type)
-enum car_type get_type(Car car);
-enum car_color get_color(Car car);
+Car get_car(CarType car);
+enum CarType get_type(Car car);
+enum Color get_color(Car car);
+void init();
 double get_fill_level(Car car);
-void accelerate(Car car);
-double set_acceleration_rate(Car car, double acceleration);
+double get_acceleration_rate(Car car);
+void set_acceleration_rate(Car car, double rate);
 int get_speed(Car car);
+void accelerate(Car car);
 #endif
